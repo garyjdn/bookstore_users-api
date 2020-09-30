@@ -1,0 +1,31 @@
+[
+    // User JSON
+    {
+        "id": 123,
+        "first_name": "Calvine",
+        "last_name": "Tanuwidjaja",
+        "email": "calvine.tanuwidjaja@gmail.com",
+        "date_created": ""
+    },
+
+    // Not Found
+    {
+        "message": "user not found",
+        "status": 404,
+        "error": "not_found"
+    },
+
+    // Invalid Json Body
+    {
+        "message": "invalid json body",
+        "status": 400,
+        "error": "bad_request"
+    },
+
+    // Database is Down
+    {
+        "message": "database is down",
+        "status": 500,
+        "error": "internal_server_error"
+    }
+]
