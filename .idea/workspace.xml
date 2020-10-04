@@ -20,16 +20,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d4397a77-138f-4c55-ad5a-5cbf6ce12ce3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/application.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/url_mappings.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controllers/ping/ping_controller.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controllers/users/users_controller.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/domain/users/user_dao.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/domain/users/user_dto.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/response-example.jsonc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/users_service.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/errors/rest_error.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datasources/mysql/users_db/users_db.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/domain/users/user_marshaller.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logger/logger.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/crypto_utils/crypto_utils.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/date_utils/date_utils.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/mysql_utils/msql_utils.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/application.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/application.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/url_mappings.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/url_mappings.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/users/users_controller.go" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/users/users_controller.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/users/user_dao.go" beforeDir="false" afterPath="$PROJECT_DIR$/domain/users/user_dao.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/users/user_dto.go" beforeDir="false" afterPath="$PROJECT_DIR$/domain/users/user_dto.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/users_service.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/users_service.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/errors/rest_error.go" beforeDir="false" afterPath="$PROJECT_DIR$/utils/errors/rest_error.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,6 +62,7 @@
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DefaultGoTemplateProperty" value="Go File" />
+    <property name="NewWatcherDialog.advanced.open" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="go.import.settings.migrated" value="true" />
@@ -67,6 +72,8 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/utils/crypto_utils" />
+      <recent name="$PROJECT_DIR$/datasources/mysql/users_db" />
       <recent name="$PROJECT_DIR$/controllers/users" />
       <recent name="$PROJECT_DIR$/controllers/ping_controller" />
       <recent name="$PROJECT_DIR$" />
@@ -76,6 +83,12 @@
     <configuration name="go build main.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="bookstore_users-api" />
       <working_directory value="$PROJECT_DIR$" />
+      <envs>
+        <env name="mysql_users_username" value="root" />
+        <env name="mysql_users_host" value="127.0.0.1:3306" />
+        <env name="mysql_users_schema" value="users_db" />
+        <env name="mysql_users_password" value="" />
+      </envs>
       <kind value="FILE" />
       <filePath value="$PROJECT_DIR$/main.go" />
       <package value="github.com/garyjdn/bookstore_users-api" />
@@ -118,60 +131,65 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="348" y="181" width="659" height="444" key="EditFileWatcherDialog" timestamp="1601456754797">
+    <state x="141" y="60" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1601671408665">
       <screen x="0" y="36" width="1366" height="732" />
     </state>
-    <state x="348" y="181" width="659" height="444" key="EditFileWatcherDialog/0.36.1366.732@0.36.1366.732" timestamp="1601456754797" />
-    <state width="1320" height="214" key="GridCell.Tab.0.bottom" timestamp="1601489293222">
+    <state x="141" y="60" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.36.1366.732@0.36.1366.732" timestamp="1601671408665" />
+    <state x="348" y="120" width="659" height="648" key="EditFileWatcherDialog" timestamp="1601659005952">
       <screen x="0" y="36" width="1366" height="732" />
     </state>
-    <state width="1320" height="214" key="GridCell.Tab.0.bottom/0.36.1366.732@0.36.1366.732" timestamp="1601489293222" />
-    <state width="1320" height="214" key="GridCell.Tab.0.center" timestamp="1601489293221">
+    <state x="348" y="120" width="659" height="648" key="EditFileWatcherDialog/0.36.1366.732@0.36.1366.732" timestamp="1601659005952" />
+    <state x="547" y="168" width="415" height="473" key="EnvironmentVariablesDialog" timestamp="1601671406217">
       <screen x="0" y="36" width="1366" height="732" />
     </state>
-    <state width="1320" height="214" key="GridCell.Tab.0.center/0.36.1366.732@0.36.1366.732" timestamp="1601489293221" />
-    <state width="1320" height="214" key="GridCell.Tab.0.left" timestamp="1601489293220">
+    <state x="547" y="168" width="415" height="473" key="EnvironmentVariablesDialog/0.36.1366.732@0.36.1366.732" timestamp="1601671406217" />
+    <state width="1320" height="214" key="GridCell.Tab.0.bottom" timestamp="1601826746614">
       <screen x="0" y="36" width="1366" height="732" />
     </state>
-    <state width="1320" height="214" key="GridCell.Tab.0.left/0.36.1366.732@0.36.1366.732" timestamp="1601489293220" />
-    <state width="1320" height="214" key="GridCell.Tab.0.right" timestamp="1601489293221">
+    <state width="1320" height="214" key="GridCell.Tab.0.bottom/0.36.1366.732@0.36.1366.732" timestamp="1601826746614" />
+    <state width="1320" height="214" key="GridCell.Tab.0.center" timestamp="1601826746613">
       <screen x="0" y="36" width="1366" height="732" />
     </state>
-    <state width="1320" height="214" key="GridCell.Tab.0.right/0.36.1366.732@0.36.1366.732" timestamp="1601489293221" />
-    <state width="1320" height="214" key="GridCell.Tab.1.bottom" timestamp="1601489309213">
+    <state width="1320" height="214" key="GridCell.Tab.0.center/0.36.1366.732@0.36.1366.732" timestamp="1601826746613" />
+    <state width="1320" height="214" key="GridCell.Tab.0.left" timestamp="1601826746613">
       <screen x="0" y="36" width="1366" height="732" />
     </state>
-    <state width="1320" height="214" key="GridCell.Tab.1.bottom/0.36.1366.732@0.36.1366.732" timestamp="1601489309213" />
-    <state width="1320" height="214" key="GridCell.Tab.1.center" timestamp="1601489309212">
+    <state width="1320" height="214" key="GridCell.Tab.0.left/0.36.1366.732@0.36.1366.732" timestamp="1601826746613" />
+    <state width="1320" height="214" key="GridCell.Tab.0.right" timestamp="1601826746614">
       <screen x="0" y="36" width="1366" height="732" />
     </state>
-    <state width="1320" height="214" key="GridCell.Tab.1.center/0.36.1366.732@0.36.1366.732" timestamp="1601489309212" />
-    <state width="1320" height="214" key="GridCell.Tab.1.left" timestamp="1601489309211">
+    <state width="1320" height="214" key="GridCell.Tab.0.right/0.36.1366.732@0.36.1366.732" timestamp="1601826746614" />
+    <state width="1320" height="214" key="GridCell.Tab.1.bottom" timestamp="1601826746615">
       <screen x="0" y="36" width="1366" height="732" />
     </state>
-    <state width="1320" height="214" key="GridCell.Tab.1.left/0.36.1366.732@0.36.1366.732" timestamp="1601489309211" />
-    <state width="1320" height="214" key="GridCell.Tab.1.right" timestamp="1601489309212">
+    <state width="1320" height="214" key="GridCell.Tab.1.bottom/0.36.1366.732@0.36.1366.732" timestamp="1601826746615" />
+    <state width="1320" height="214" key="GridCell.Tab.1.center" timestamp="1601826746615">
       <screen x="0" y="36" width="1366" height="732" />
     </state>
-    <state width="1320" height="214" key="GridCell.Tab.1.right/0.36.1366.732@0.36.1366.732" timestamp="1601489309212" />
-    <state x="187" y="36" width="992" height="732" key="SettingsEditor" timestamp="1601456773933">
+    <state width="1320" height="214" key="GridCell.Tab.1.center/0.36.1366.732@0.36.1366.732" timestamp="1601826746615" />
+    <state width="1320" height="214" key="GridCell.Tab.1.left" timestamp="1601826746615">
       <screen x="0" y="36" width="1366" height="732" />
     </state>
-    <state x="187" y="36" width="992" height="732" key="SettingsEditor/0.36.1366.732@0.36.1366.732" timestamp="1601456773933" />
+    <state width="1320" height="214" key="GridCell.Tab.1.left/0.36.1366.732@0.36.1366.732" timestamp="1601826746615" />
+    <state width="1320" height="214" key="GridCell.Tab.1.right" timestamp="1601826746615">
+      <screen x="0" y="36" width="1366" height="732" />
+    </state>
+    <state width="1320" height="214" key="GridCell.Tab.1.right/0.36.1366.732@0.36.1366.732" timestamp="1601826746615" />
+    <state x="187" y="36" width="992" height="732" key="SettingsEditor" timestamp="1601659020191">
+      <screen x="0" y="36" width="1366" height="732" />
+    </state>
+    <state x="187" y="36" width="992" height="732" key="SettingsEditor/0.36.1366.732@0.36.1366.732" timestamp="1601659020191" />
     <state x="346" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1601469037773">
       <screen x="0" y="36" width="1366" height="732" />
     </state>
     <state x="346" y="89" width="672" height="678" key="search.everywhere.popup/0.36.1366.732@0.36.1366.732" timestamp="1601469037773" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/controllers/users/users_controller.go</url>
-          <line>34</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="GoApplicationRunConfiguration">
+        <watch expression="username" language="go" />
+        <watch expression="password" language="go" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>
